@@ -10,3 +10,19 @@ var reversePrefix = function(word, ch) {
     return reverseSubStr + restSubStr;
 };
 
+// TWO POINTERS
+var reversePrefix = function(word, ch) {
+    let left = 0; 
+    let right = word.indexOf(ch);
+    let reversed = word.split('');
+
+    while (left < right) {
+        let tempRight = word[right];
+        reversed[right] = reversed[left];
+        reversed[left] = tempRight;
+        left++;
+        right--;
+    }
+
+    return reversed.join('')
+};
