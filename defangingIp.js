@@ -18,3 +18,11 @@ var defangIPaddr = function(address) {
 
   return newAddress
 };
+
+// WITH JS - REPLACE ALL
+var defangIPaddr = function(address) {
+  return address.replaceAll('.', '[.]')
+};
+
+// WITH JS - SPLIT, MAP AND JOIN:
+return address.split('').map(char => char === '.' ? '[.]' : char).join('')
